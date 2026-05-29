@@ -12,4 +12,18 @@ public class Pilha<T> extends EstruturaEstatica<T>
     public Pilha(int capacidade){
         super(capacidade);
     }
+
+    public void empilha(T elemento)
+    {
+        super.adicionaFinal(elemento);
+    }
+
+    public T topo()
+    {
+        if(estaVazia())
+        {
+            return null;
+        }
+        return elementos[tamanho - 1];
+    }
 }

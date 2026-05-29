@@ -2,8 +2,8 @@ package com.caio.estruturadados.base;
 
 public class EstruturaEstatica<T>
 {
-    private T[] elementos;
-    private int tamanho;
+    protected T[] elementos;
+    protected int tamanho;
 
     public EstruturaEstatica(int capacidade) {
         this.elementos = (T[]) new Object[capacidade];
@@ -65,14 +65,14 @@ public class EstruturaEstatica<T>
         tamanho --;
     }
 
-    private void aumentaCapacidade()
+    protected void aumentaCapacidade()
     {
         if(tamanho == elementos.length)
         {
             T[] elementosNovos = (T[]) new Object[elementos.length * 2];
             for(int i = 0; i < elementos.length; i++)
             {
-                elementosNovos[i] = this.elementos[i];
+                elementosNovos[i] = elementos[i];
             }
             elementos = elementosNovos;
         }
